@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # (c) @lnc3f3r Jins Mathew Re-Create
+#Just Add Me To Your Group And Channel And Connect Them And See My Powers 🔥🔥😝
 
 class Translation(object):
     
     START_TEXT = """<b>Hey {}!!</b>
 <i>Am Just A Advance Auto Filter Bot....😉
 
-Just Add Me To Your Group And Channel And Connect Them And See My Powers 🔥🔥😝
+Only For <b><u><a href="https://t.me/joinchat/TRlZZilyh-MVa66t">Universal Film Studio Group</a></u></b>
 
 For More Details Click Help Button Below..
 
