@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# (c) @AlbertEinsteinTG
+# (c) @lnc3f3r Jins Mathew Re-Create
 
 from pyrogram import Client, __version__
 
