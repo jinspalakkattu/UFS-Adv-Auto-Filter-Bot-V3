@@ -100,6 +100,12 @@ async def auto_filter(bot, update):
                 bot_ = FIND.get("bot_details")
                 file_link = f"https://t.me/{bot_.username}?start={unique_id}"
             
+            
+            results.append(
+                [
+                    InlineKeyboardButton("⭕️ JOIN OUR MAIN CHANNEL ⭕️", url="https://t.me/UFStudio2")
+                ]
+            )
             results.append(
                 [
                     InlineKeyboardButton(file_name, url=file_link)
