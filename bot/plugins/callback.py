@@ -142,7 +142,7 @@ async def cb_navg(bot, update: CallbackQuery):
     
     reply_markup = InlineKeyboardMarkup(temp_results)
     
-    text=f"<i>Found</i> <code>{leng}</code> <i>Results For Your Query:</i> <code>{query}</code>"
+    text=f"<i>We Found</i> <code>{leng}</code> <i>Results For Your Query:</i> <code>{query}</code>"
         
     try:
         await update.message.edit(
@@ -580,7 +580,7 @@ async def cb_disconnect(bot, update: CallbackQuery):
     remove_active = await db.del_active(chat_id, int(channel_id))
     
     if not remove_active:
-        await update.answer("Couldnt Full Fill YOur Request...\n Report This @CrazyBotszGrp Along With Bot's Log", show_alert=True)
+        await update.answer("Couldnt Full Fill Your Request...\n Report This <a href='https://t.me/joinchat/YS-WlsUC9nFiOWM0'>UFS Bot Support Group</a> Along With Bot's Log", show_alert=True)
         return
     
     text= f"<i>Sucessfully Disconnected From</i> <code>{channel_name}</code>\n"
@@ -953,7 +953,7 @@ async def cb_config(bot, update: CallbackQuery):
     mr_count = settings["configs"]["max_per_page"]
     show_invite = settings["configs"]["show_invite_link"]
     pm_file_chat  = settings["configs"].get("pm_fchat", False)
-    accuracy_point = settings["configs"].get("accuracy", 0.80)
+    accuracy_point = settings["configs"].get("accuracy", 0.50)
     
     text=f"<i><b>Configure Your <u><code>{chat_name}</code></u> Group's Filter Settings...</b></i>\n"
     
@@ -1183,7 +1183,7 @@ async def cb_max_page(bot, update: CallbackQuery):
 @Client.on_callback_query(filters.regex(r"mf_count\((.+)\)"), group=2)
 async def cb_max_results(bot, update: CallbackQuery):
     """
-    A Callback Funtion For Changing The Count Of Maximum Files TO Be Fetched From Database
+    A Callback Funtion For Changing The Count Of Maximum Files To Be Fetched From Database
     """
     global VERIFY
     query_data = update.data
@@ -1392,7 +1392,7 @@ async def cb_accuracy(bot, update: CallbackQuery):
 
     val, chat_id = re.findall(r"accuracy\((.+)\)", query_data)[0].split("|", 1)
     
-    text = f"<i>Choose Your Desired 'Accuracy Perceentage' For Every Filter Results Shown In</i> <code>{chat_name}</code>\n\n"
+    text = f"<i>Choose Your Desired 'Accuracy Percentage' For Every Filter Results Shown In</i> <code>{chat_name}</code>\n\n"
     text+= f"<i>NB: Higher The Value Better Matching Results Will Be Provided... And If Value Is Lower It Will Show More Results \
         Which Is Fimilary To Query Search (Wont Be Accurate)....</i>"
 
@@ -1600,15 +1600,15 @@ async def cb_about(bot, update: CallbackQuery):
 
     text=f"<i><u>Bot's Status</u></i>\n"
     text+=f"\n<b><i>Bot's Uptime:</i></b> <code>{time_formatter(time.time() - start_uptime)}</code>\n"
-    text+=f"\n<b><i>Bot Funtion:</i></b> <i>Auto Filter Files</i>\n"
-    text+=f"""\n<b><i>Bot Support:</i></b> <a href="https://t.me/CrazyBotszGrp">@CrazyBotszGrp</a>\n"""
-    text+="""\n<b><i>Source Code:</i></b> <a href="https://github.com/AlbertEinsteinTG/Adv-Filter-Bot-V2">Source</a>"""
+    text+=f"\n<b><i>Bot Funtion:</i></b> <i>Advanced Auto Filter Files</i>\n"
+    text+=f"""\n<b><i>Bot Support:</i></b> <a href="https://t.me/joinchat/YS-WlsUC9nFiOWM0">UFS Bot Support Group</a>\n"""
+    text+="""\n<b><i>Source Code:</i></b> <a href="https://t.me/joinchat/YS-WlsUC9nFiOWM0">Contact Us</a>"""
 
     buttons = [
         [
             InlineKeyboardButton
                 (
-                    "My Dev ⚡", url="https://t.me/AlbertEinstein_TG"
+                    "My Dev ⚡", url="https://t.me/joinchat/YS-WlsUC9nFiOWM0"
                 ),
                 
             InlineKeyboardButton
@@ -1639,10 +1639,10 @@ async def callback_data(bot, update: CallbackQuery):
 
     if query_data == "start":
         buttons = [[
-            InlineKeyboardButton('My Dev 👨‍🔬', url='https://t.me/AlbertEinstein_TG'),
-            InlineKeyboardButton('Source Code 🧾', url ='https://github.com/AlbertEinsteinTG/Adv-Auto-Filter-Bot')
+            InlineKeyboardButton('My Dev 👨‍🔬', url='https://t.me/joinchat/YS-WlsUC9nFiOWM0'),
+            InlineKeyboardButton('Source Code 🧾', url ='https://t.me/joinchat/YS-WlsUC9nFiOWM0')
         ],[
-            InlineKeyboardButton('Support 🛠', url='https://t.me/CrazyBotszGrp')
+            InlineKeyboardButton('Support 🛠', url='https://t.me/joinchat/YS-WlsUC9nFiOWM0')
         ],[
             InlineKeyboardButton('Help ⚙', callback_data="help")
         ]]
