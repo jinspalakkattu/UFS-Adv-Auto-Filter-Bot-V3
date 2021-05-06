@@ -15,7 +15,7 @@ db = Database()
 @Client.on_message(filters.command(["add"]) & filters.group, group=1)
 async def connect(bot: Bot, update):
     """
-    A Funtion To Handle Incoming /add Command TO COnnect A Chat With Group
+    A Funtion To Handle Incoming /add Command TO Connect A Chat With Group
     """
     chat_id = update.chat.id
     user_id = update.from_user.id if update.from_user else None
