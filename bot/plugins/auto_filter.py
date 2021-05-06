@@ -184,7 +184,7 @@ async def auto_filter(bot, update):
         try:
             await bot.send_message(
                 chat_id = update.chat.id,
-                text=f"We Found {(len_results)} Results For Your Query: <code>{query}</code>",
+                text=f"We Found <code><b><i>{(len_results)}</i></b></code> Results For Your Query: <code><b><i>{query}</i></b></code>",
                 reply_markup=reply_markup,
                 parse_mode="html",
                 reply_to_message_id=update.message_id
