@@ -52,7 +52,7 @@ async def cb_navg(bot, update: CallbackQuery):
         VERIFY[str(chat_id)] = admin_list
     
     if not ((user_id == ruser_id) or (user_id in admin_list)): # Checks if user is same as requested user or is admin
-        await update.answer("Nice Try ;)",show_alert=True)
+        await update.answer("Nice Try! But, This Is Not For You;)",show_alert=True)
         return
 
 
@@ -72,6 +72,11 @@ async def cb_navg(bot, update: CallbackQuery):
     max_pages = FIND.get(query).get("max_pages")
     
     try:
+        temp_results.append(
+                [
+                    InlineKeyboardButton("⭕️ JOIN OUR MAIN CHANNEL ⭕️", url="https://t.me/UFStudio2")
+                ]
+            )
         temp_results = results[index_val].copy()
     except IndexError:
         return # Quick Fix🏃🏃
