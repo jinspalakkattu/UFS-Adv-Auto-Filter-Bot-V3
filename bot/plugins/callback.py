@@ -71,12 +71,7 @@ async def cb_navg(bot, update: CallbackQuery):
     leng = FIND.get(query).get("total_len")
     max_pages = FIND.get(query).get("max_pages")
     
-    try:
-        temp_results.append(
-                [
-                    InlineKeyboardButton("⭕️ JOIN OUR MAIN CHANNEL ⭕️", url="https://t.me/UFStudio2")
-                ]
-            )
+    try:        
         temp_results = results[index_val].copy()
     except IndexError:
         return # Quick Fix🏃🏃
