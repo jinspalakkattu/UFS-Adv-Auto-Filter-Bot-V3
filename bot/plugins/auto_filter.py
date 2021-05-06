@@ -61,7 +61,7 @@ async def auto_filter(bot, update):
     
     if filters:
         for filter in filters: # iterating through each files
-            file_name = filter.get("file_name")
+            file_name = "📁 " + filter.get("file_name")
             file_type = filter.get("file_type")
             file_link = filter.get("file_link")
             
