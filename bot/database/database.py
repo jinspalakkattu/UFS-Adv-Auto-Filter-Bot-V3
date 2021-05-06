@@ -52,7 +52,7 @@ class Database(metaclass=Singleton):
                 video=True
             ),
             configs = dict(
-                accuracy=0.80,
+                accuracy=0.50,
                 max_pages=5,
                 max_results=50,
                 max_per_page=10,
