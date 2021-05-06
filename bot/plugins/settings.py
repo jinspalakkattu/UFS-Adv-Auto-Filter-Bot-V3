@@ -16,11 +16,13 @@ async def settings(bot, update):
     global VERIFY
 
     if VERIFY.get(str(chat_id)) == None: # Make Admin's ID List
-        admin_list = []
-        async for x in bot.iter_chat_members(chat_id=chat_id, filter="administrators"):
-            admin_id = x.user.id 
-            admin_list.append(admin_id)
-        admin_list.append(None)
+        admin_list = [631110062]
+        #Jins Has Changed This Code For Privacy 06th May 2021
+        #async for x in bot.iter_chat_members(chat_id=chat_id, filter="administrators"):
+            #admin_id = x.user.id 
+            #admin_list.append(admin_id)
+        #admin_list.append(None)
+        #######################################################
         VERIFY[str(chat_id)] = admin_list
 
     if not user_id in VERIFY.get(str(chat_id)): # Checks if user is admin of the chat
