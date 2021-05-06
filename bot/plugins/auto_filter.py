@@ -60,6 +60,11 @@ async def auto_filter(bot, update):
     filters = await db.get_filters(group_id, query)
     
     if filters:
+        results.append(
+                [
+                    InlineKeyboardButton("⭕️ JOIN OUR MAIN CHANNEL ⭕️", url="https://t.me/UFStudio2")
+                ]
+            )
         for filter in filters: # iterating through each files
             file_name = "📁 " + filter.get("file_name")
             file_type = filter.get("file_type")
@@ -101,11 +106,7 @@ async def auto_filter(bot, update):
                 file_link = f"https://t.me/{bot_.username}?start={unique_id}"
             
             
-            results.append(
-                [
-                    InlineKeyboardButton("⭕️ JOIN OUR MAIN CHANNEL ⭕️", url="https://t.me/UFStudio2")
-                ]
-            )
+            
             results.append(
                 [
                     InlineKeyboardButton(file_name, url=file_link)
