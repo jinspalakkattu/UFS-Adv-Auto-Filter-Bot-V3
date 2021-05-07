@@ -114,6 +114,13 @@ async def auto_filter(bot, update):
             )
         
     else:
+        await bot.send_message(
+                chat_id = group_id,
+                text=f"Couldn't Find This Movie.Please Try Again Or Search On Our <b><a href='https://t.me/UFStudio2'>Channel</a></b>. \n\nഈ സിനിമയുടെ ഒറിജിനൽ പേര് ഗൂഗിളിൽ പോയി കണ്ടെത്തി അതുപോലെ ഇവിടെ കൊടുക്കുക 🥺",
+                reply_markup=reply_markup,
+                parse_mode="html",
+                reply_to_message_id=update.message_id
+            )
         return # return if no files found for that query
     
 
