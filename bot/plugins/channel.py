@@ -87,7 +87,7 @@ async def connect(bot: Bot, update):
         await update.reply_text("Channel Aldready In Db...!!!")
         return
     
-    wait_msg = await update.reply_text("Please Wait Till I Add All Your Files From Channel To Db\n\n<i>This May Take 10 or 15 Mins Depending On Your No. Of Files In Channel.....</i>\n\nUntil Then Please Dont Sent Any Other Command Or This Operation May Be Intrupted....")
+    wait_msg = await update.reply_text("Please Wait Till I Add All Your Files From Channel To Db\n\n<i>This May Take 1 or 2 Hours Depending On Your No. Of Files In Channel.....</i>\n\nUntil Then Please Dont Sent Any Other Command Or This Operation May Be Intrupted....")
     
     try:
         type_list = ["video", "audio", "document"]
@@ -113,6 +113,7 @@ async def connect(bot: Bot, update):
                         print(file_id.video.file_size)
                         file_id = file_id.video.file_id
                         file_name = msgs.video.file_name[0:-4]
+                        file_size = file_id.video.file_size
                         file_caption  = msgs.caption if msgs.caption else ""
                         file_type = "video"
                     
@@ -128,6 +129,7 @@ async def connect(bot: Bot, update):
                         print(file_id.audio.file_size)
                         file_id = file_id.audio.file_id
                         file_name = msgs.audio.file_name[0:-4]
+                        file_size = file_id.audio.file_size
                         file_caption  = msgs.caption if msgs.caption else ""
                         file_type = "audio"
                     
@@ -143,6 +145,7 @@ async def connect(bot: Bot, update):
                         print(file_id.document.file_size)
                         file_id = file_id.document.file_id
                         file_name = msgs.document.file_name[0:-4]
+                        file_size = file_id.document.file_size
                         file_caption  = msgs.caption if msgs.caption else ""
                         file_type = "document"
                     
@@ -166,6 +169,7 @@ async def connect(bot: Bot, update):
                         file_id=file_id, # Done
                         unique_id=unique_id,
                         file_name=file_name,
+                        file_size=file_size,
                         file_caption=file_caption,
                         file_type=file_type,
                         file_link=file_link,
@@ -298,18 +302,21 @@ async def new_files(bot: Bot, update):
             file_type = "video" 
             file_id = update.video.file_id
             file_name = update.video.file_name[0:-4]
+            file_size = update.video.file_size
             file_caption  = update.caption if update.caption else ""
 
         elif update.audio:
             file_type = "audio"
             file_id = update.audio.file_id
             file_name = update.audio.file_name[0:-4]
+            file_size = update.audio.file_size
             file_caption  = update.caption if update.caption else ""
 
         elif update.document:
             file_type = "document"
             file_id = update.document.file_id
             file_name = update.document.file_name[0:-4]
+            file_size = update.document.file_size
             file_caption  = update.caption if update.caption else ""
         
         for i in ["_", "|", "-", "."]: # Work Around
@@ -340,6 +347,7 @@ async def new_files(bot: Bot, update):
                     file_id=file_id, # File Id For Future Updates Maybe...
                     unique_id=unique_id,
                     file_name=file_name,
+                    file_size=file_size,
                     file_caption=file_caption,
                     file_type=file_type,
                     file_link=file_link,
