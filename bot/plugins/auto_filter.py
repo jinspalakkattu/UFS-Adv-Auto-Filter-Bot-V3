@@ -123,7 +123,7 @@ async def auto_filter(bot, update):
             )
         await asyncio.sleep(15) # in seconds
         await Send_message.delete()
-        await bot.delete_messages(update.chat.id,update.message_id)
+        #await bot.delete_messages(update.chat.id,update.message_id)
         return # return if no files found for that query
     
 
