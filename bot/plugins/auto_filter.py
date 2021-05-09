@@ -70,23 +70,23 @@ async def auto_filter(bot, update):
             file_type = filter.get("file_type")
             file_link = filter.get("file_link")
             file_size = int(filter.get("file_size", ""))
-            file_size = round(file_size/1024) # from B to KB
+            file_size = round((file_size/1024),2) # from B to KB
             size = ""
             file_KB = ""
             file_MB = ""
             file_GB = ""
             
             if file_size < 1024:
-                file_KB = f"[{str(round(file_size))} KB]"
+                file_KB = f"[{str(round(file_size,2))} KB]"
                 size = file_KB
             elif file_size < (1024*1024):
-                file_MB = f"[{str(round(file_size/1024))} MB]"
+                file_MB = f"[{str(round((file_size/1024),2))} MB]"
                 size = file_MB
             else:
-                file_GB = f"[{str(round(file_size/(1024*1024)))} GB]"
+                file_GB = f"[{str(round((file_size/(1024*1024)),2))} GB]"
                 size = file_GB
                 
-            file_name = size + " - 📁 " + file_name
+            file_name = size + " - 🎬 " + file_name
             
             print(file_name)
             #file_size = str(file_size) + " KB" if file_size < 1024 elif file_size < 1024 else str(round(file_size/1024)) + " GiB"  #"📁 " + 
