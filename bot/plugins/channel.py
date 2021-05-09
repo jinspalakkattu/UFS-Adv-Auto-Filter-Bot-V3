@@ -110,6 +110,7 @@ async def connect(bot: Bot, update):
                         except Exception as e:
                             print(e)
                             continue
+                        print(file_id.video.file_size)
                         file_id = file_id.video.file_id
                         file_name = msgs.video.file_name[0:-4]
                         file_caption  = msgs.caption if msgs.caption else ""
@@ -124,6 +125,7 @@ async def connect(bot: Bot, update):
                         except Exception as e:
                             print(e)
                             continue
+                        print(file_id.audio.file_size)
                         file_id = file_id.audio.file_id
                         file_name = msgs.audio.file_name[0:-4]
                         file_caption  = msgs.caption if msgs.caption else ""
@@ -138,6 +140,7 @@ async def connect(bot: Bot, update):
                         except Exception as e:
                             print(str(e))
                             continue
+                        print(file_id.document.file_size)
                         file_id = file_id.document.file_id
                         file_name = msgs.document.file_name[0:-4]
                         file_caption  = msgs.caption if msgs.caption else ""
