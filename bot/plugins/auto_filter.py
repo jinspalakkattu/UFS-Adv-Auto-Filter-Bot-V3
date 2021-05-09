@@ -77,13 +77,13 @@ async def auto_filter(bot, update):
             file_GB = ""
             
             if file_size < 1024:
-                file_KB = f"[{str(round(file_size))} KB"]
+                file_KB = f"[{str(round(file_size))} KB]"
                 size = file_KB
             elif file_size < (1024*1024):
-                file_MB = f"[{str(round(file_size/1024))} MB"]
+                file_MB = f"[{str(round(file_size/1024))} MB]"
                 size = file_MB
             else:
-                file_GB = f"[{str(round(file_size/(1024*1024)))} GB"]
+                file_GB = f"[{str(round(file_size/(1024*1024)))} GB]"
                 size = file_GB
                 
             file_name = size + " - 📁 " + file_name
