@@ -66,9 +66,30 @@ async def auto_filter(bot, update):
                 ]
             )
         for filter in filters: # iterating through each files
-            file_name = "📁 " + filter.get("file_name")
+            file_name = filter.get("file_name")
             file_type = filter.get("file_type")
             file_link = filter.get("file_link")
+            file_size = int(filter.get("file_size", ""))
+            file_size = round(file_size/1024) # from B to KB
+            Size = ""
+            file_KB = ""
+            file_MB = ""
+            file_GB = ""
+            
+            if file_size < 1024:
+                file_KB = str(file_size) + " KB"
+                Size = file_KB
+            elif file_size < (1024*1024):
+                file_MB = str(file_size/(1024)) + " MB"
+                Size = file_MB
+            else:
+                file_GB = str(file_size/(1024*1024)) + " GB"
+                Size = file_GB
+                
+            file_name = Size + " - 📁 " + file_name
+            
+            print(file_name)
+            #file_size = str(file_size) + " KB" if file_size < 1024 elif file_size < 1024 else str(round(file_size/1024)) + " GiB"  #"📁 " + 
             
             if file_type == "video":
                 if allow_video: 
