@@ -215,13 +215,14 @@ async def auto_filter(bot, update):
                 
             ibuttons = None # Free Up Memory...
             achatId = None
-            
-        ibuttons.append(
+        
+        ibuttonss = []
+        ibuttonss.append(
                         [
                             InlineKeyboardButton("⭕️ JOIN OUR MAIN CHANNEL ⭕️", url="https://t.me/UFStudio2")
                         ]
                     )
-        for x in ibuttons:
+        for x in ibuttonss:
                 result[0].insert(0, x) #Insert invite link buttons at first of page
         
         reply_markup = InlineKeyboardMarkup(result[0])
