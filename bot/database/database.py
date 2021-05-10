@@ -440,8 +440,10 @@ class Database(metaclass=Singleton):
         if not achats:
             return False
         
-        for chats in achats["chats"]:
-            achat_ids.append(chats.get("chat_id"))
+        #for chats in achats["chats"]:
+        #    achat_ids.append(chats.get("chat_id"))
+        
+        achat_ids.append(group_id)
         
         filters = []
                 
