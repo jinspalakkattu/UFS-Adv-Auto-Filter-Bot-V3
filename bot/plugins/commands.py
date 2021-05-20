@@ -38,7 +38,7 @@ async def start(bot, update):
                         [
                             InlineKeyboardButton
                                 (
-                                    'Developers', url="https://t.me/joinchat/YS-WlsUC9nFiOWM0"
+                                    '🎭 Join Our Group', url="https://t.me/joinchat/TRlZZilyh-MVa66t"
                                 )
                         ]
                     ]
@@ -57,7 +57,7 @@ async def start(bot, update):
                         [
                             InlineKeyboardButton
                                 (
-                                    'Developers', url="https://t.me/joinchat/YS-WlsUC9nFiOWM0"
+                                    '🎭 Join Our Group', url="https://t.me/joinchat/TRlZZilyh-MVa66t"
                                 )
                         ]
                     ]
@@ -76,7 +76,7 @@ async def start(bot, update):
                         [
                             InlineKeyboardButton
                                 (
-                                    'Developers', url="https://t.me/joinchat/YS-WlsUC9nFiOWM0"
+                                    '🎭 Join Our Group', url="https://t.me/joinchat/TRlZZilyh-MVa66t"
                                 )
                         ]
                     ]
@@ -89,7 +89,7 @@ async def start(bot, update):
         return
 
     buttons = [[
-        InlineKeyboardButton('Developers', url='https://t.me/joinchat/YS-WlsUC9nFiOWM0'),
+        InlineKeyboardButton('Developers', url='https://t.me/joinchat/TRlZZilyh-MVa66t'),
         InlineKeyboardButton('Source Code 🧾', url ='https://t.me/joinchat/YS-WlsUC9nFiOWM0')
     ],[
         InlineKeyboardButton('Support 🛠', url='https://t.me/joinchat/YS-WlsUC9nFiOWM0')
