@@ -38,7 +38,7 @@ async def start(bot, update):
                         [
                             InlineKeyboardButton
                                 (
-                                    '🎭 Join Our Group', url="https://t.me/joinchat/TRlZZilyh-MVa66t"
+                                    '🎭 ⭕️ FOR YOUR QUERY, CONTACT ME ⭕️', url="https://t.me/UFSChatBot"
                                 )
                         ]
                     ]
@@ -57,7 +57,7 @@ async def start(bot, update):
                         [
                             InlineKeyboardButton
                                 (
-                                    '🎭 Join Our Group', url="https://t.me/joinchat/TRlZZilyh-MVa66t"
+                                    '🎭 ⭕️ FOR YOUR QUERY, CONTACT ME ⭕️', url="https://t.me/UFSChatBot"
                                 )
                         ]
                     ]
@@ -76,7 +76,7 @@ async def start(bot, update):
                         [
                             InlineKeyboardButton
                                 (
-                                    '🎭 Join Our Group', url="https://t.me/joinchat/TRlZZilyh-MVa66t"
+                                    '🎭 ⭕️ FOR YOUR QUERY, CONTACT ME ⭕️', url="https://t.me/UFSChatBot"
                                 )
                         ]
                     ]
