@@ -219,7 +219,7 @@ async def auto_filter(bot, update):
         ibuttonss = []
         ibuttonss.append(
                         [
-                            InlineKeyboardButton("⭕️ JOIN OUR MAIN CHANNEL ⭕️", url="https://t.me/UFStudio2")
+                            InlineKeyboardButton("⭕️ CONTACT ME ⭕️", url="https://t.me/UFSChatBot")
                         ]
                     )
         for x in ibuttonss:
