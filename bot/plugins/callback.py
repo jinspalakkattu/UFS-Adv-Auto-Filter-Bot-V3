@@ -140,7 +140,7 @@ async def cb_navg(bot, update: CallbackQuery):
         ibuttons = None
         achatId = None
     
-    ibuttonss[]
+    ibuttonss = []
     ibuttonss[-1].append(
                     [
                         InlineKeyboardButton("⭕️ CONTACT ME ⭕️", url="https://t.me/UFSChatBot")
