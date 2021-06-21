@@ -140,15 +140,6 @@ async def cb_navg(bot, update: CallbackQuery):
         ibuttons = None
         achatId = None
     
-    ibuttonss = []
-    ibuttonss[-1].append(
-                    [
-                        InlineKeyboardButton("⭕️ CONTACT ME ⭕️", url="https://t.me/UFSChatBot")
-                    ]
-                )
-    for x in ibuttonss:
-            temp_results.insert(0, x) #Insert invite link buttons at first of page
-    
     reply_markup = InlineKeyboardMarkup(temp_results)
     
     text=f"<i>We Found</i> <code><b><i>{leng}</i></b></code> <i>Results For Your Query:</i> <code><b><i>{query}</i></b></code>"
