@@ -19,9 +19,9 @@
             "description": "Your API Hash From my.telegram.org or @UseTGXBot",
             "value": ""
         },
-        "ADMIN_ID": {
-            "description": "Your ID For Accessing This Bot",
-            "value": "631110062"
+        "OWNER_ID": {
+          "description": "An integer of consisting of your owner ID",
+          "value": "631110062"
         },
         "BOT_TOKEN": {
             "description": "Your Bot Token From @BotFather",
