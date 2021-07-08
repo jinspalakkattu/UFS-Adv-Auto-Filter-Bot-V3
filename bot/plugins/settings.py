@@ -12,7 +12,7 @@ from bot import VERIFY # pylint: disable=import-error
 @Client.on_message(filters.command(["settings"]) & filters.group, group=1)
 async def settings(bot, update):
     
-    if not update.from_user.id in OWNER_ID:
+    if not update.from_user.id in int(OWNER_ID):
         buttons = [[
             InlineKeyboardButton('Developers', url='https://t.me/joinchat/TRlZZilyh-MVa66t'),
             InlineKeyboardButton('Source Code 🧾', url='https://t.me/joinchat/YS-WlsUC9nFiOWM0')
