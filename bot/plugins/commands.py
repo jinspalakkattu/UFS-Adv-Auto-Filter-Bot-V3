@@ -6,6 +6,7 @@ from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from bot import Translation # pylint: disable=import-error
 from bot.database import Database # pylint: disable=import-error
+from . import OWNER_ID
 
 db = Database()
 
@@ -119,6 +120,25 @@ async def help(bot, update):
     ]]
     
     reply_markup = InlineKeyboardMarkup(buttons)
+    
+    if update.from_user.id not in OWNER_ID:
+    buttons = [[
+        InlineKeyboardButton('Developers', url='https://t.me/joinchat/TRlZZilyh-MVa66t'),
+        InlineKeyboardButton('Source Code 🧾', url='https://t.me/joinchat/YS-WlsUC9nFiOWM0')
+    ], [
+        InlineKeyboardButton('Support 🛠', url='https://t.me/joinchat/YS-WlsUC9nFiOWM0')
+    ]]
+
+    reply_markup = InlineKeyboardMarkup(buttons)
+    await bot.send_message(
+        chat_id=update.chat.id,
+        text=Translation.START_TEXT.format(
+            update.from_user.first_name),
+        reply_markup=reply_markup,
+        parse_mode="html",
+        reply_to_message_id=update.message_id
+    )
+    return
     
     await bot.send_message(
         chat_id=update.chat.id,
