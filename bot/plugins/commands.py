@@ -100,6 +100,17 @@ async def start(bot, update):
     
     reply_markup = InlineKeyboardMarkup(buttons)
     
+    if update.from_user.id not in OWNER_ID:
+        await bot.send_message(
+            chat_id=update.chat.id,
+            text="""<b>Hey {}!!</b>
+            ഈ ബോട്ട് <b><u><a href="https://t.me/joinchat/TRlZZilyh-MVa66t">Universal Film Studio Group</a></u></b> ലേക്ക് ഉള്ളത് എന്ന് ഇനി വീണ്ടും വീണ്ടും പറയണോ??
+            അപ്പോ പിന്നെ എന്തിനാ വീണ്ടും വീണ്ടും സ്റ്റാർട്ട് കുത്തി കളിക്കാൻ വരുന്നേ... ആ സൈഡിലോട്ട് എങ്ങാനും മാറി ഇരിക്ക്‌ ഇനി🤭🤭""".format(update.from_user.first_name),
+            parse_mode="html",
+            reply_to_message_id=update.message_id
+        )
+        return
+    
     await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.START_TEXT.format(
@@ -125,8 +136,7 @@ async def help(bot, update):
         await bot.send_message(
             chat_id=update.chat.id,
             text="""<b>Hey {}!!</b>
-            <i>Am Just An Advance Auto Filter Bot....😉
-            Only For <b><u><a href="https://t.me/joinchat/TRlZZilyh-MVa66t">Universal Film Studio Group</a></u></b></i>""".format(update.from_user.first_name),
+            നീ ഏതാ..... ഒന്ന് പോടെയ് അവൻ help ചോയ്ച്ച് വന്നിരിക്കുന്നു😤...I'm Different Bot U Know""".format(update.from_user.first_name),
             parse_mode="html",
             reply_to_message_id=update.message_id
         )
