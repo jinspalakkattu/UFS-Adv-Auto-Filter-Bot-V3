@@ -15,7 +15,7 @@ db = Database()
 
 @Client.on_message(filters.command(["add"]) & filters.group, group=1)
 async def connect(bot: Bot, update):
-    if update.from_user.id not in OWNER_ID:
+    if not update.from_user.id in OWNER_ID:
         buttons = [[
             InlineKeyboardButton('Developers', url='https://t.me/joinchat/TRlZZilyh-MVa66t'),
             InlineKeyboardButton('Source Code 🧾', url='https://t.me/joinchat/YS-WlsUC9nFiOWM0')
