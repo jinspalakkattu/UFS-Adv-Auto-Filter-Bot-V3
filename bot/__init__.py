@@ -15,7 +15,10 @@ APP_ID = int(os.environ.get("APP_ID"))
 
 API_HASH = os.environ.get("API_HASH")
 
-OWNER_ID = os.environ.get("OWNER_ID")
+try:
+    OWNER_ID = int(os.environ.get('OWNER_ID', None))
+except ValueError:
+    raise Exception("Your OWNER_ID env variable is not a valid integer.")
 
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
 
