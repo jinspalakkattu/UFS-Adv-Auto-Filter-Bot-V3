@@ -121,7 +121,7 @@ async def help(bot, update):
     
     reply_markup = InlineKeyboardMarkup(buttons)
     
-    if update.from_user.id not in OWNER_ID:
+    if not update.from_user.id in OWNER_ID:
         buttons = [[
             InlineKeyboardButton('Developers', url='https://t.me/joinchat/TRlZZilyh-MVa66t'),
             InlineKeyboardButton('Source Code 🧾', url='https://t.me/joinchat/YS-WlsUC9nFiOWM0')
