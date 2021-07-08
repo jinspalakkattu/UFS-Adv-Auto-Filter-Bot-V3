@@ -14,9 +14,9 @@ from .translation import Translation
 APP_ID = int(os.environ.get("APP_ID"))
 
 API_HASH = os.environ.get("API_HASH")
-
+    
 try:
-    OWNER_ID = int(os.environ.get('OWNER_ID', None))
+    OWNER_ID = set(int(x) for x in os.environ.get("OWNER_ID", "").split())
 except ValueError:
     raise Exception("Your OWNER_ID env variable is not a valid integer.")
 
