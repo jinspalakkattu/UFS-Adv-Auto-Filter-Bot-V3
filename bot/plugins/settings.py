@@ -12,16 +12,16 @@ from bot import VERIFY # pylint: disable=import-error
 @Client.on_message(filters.command(["settings"]) & filters.group, group=1)
 async def settings(bot, update):
     
-    if update.from_user.id not in OWNER_ID:
-        await bot.send_message(
-            chat_id=update.chat.id,
-            text="""<b>Hey {}!!</b>
-            <i>Am Just An Advance Auto Filter Bot....😉
-            Only For <b><u><a href="https://t.me/joinchat/TRlZZilyh-MVa66t">Universal Film Studio Group</a></u></b></i>""".format(update.from_user.first_name),
-            parse_mode="html",
-            reply_to_message_id=update.message_id
-        )
-        return
+    # if update.from_user.id not in OWNER_ID:
+    #     await bot.send_message(
+    #         chat_id=update.chat.id,
+    #         text="""<b>Hey {}!!</b>
+    #         <i>Am Just An Advance Auto Filter Bot....😉
+    #         Only For <b><u><a href="https://t.me/joinchat/TRlZZilyh-MVa66t">Universal Film Studio Group</a></u></b></i>""".format(update.from_user.first_name),
+    #         parse_mode="html",
+    #         reply_to_message_id=update.message_id
+    #     )
+    #     return
     
     chat_id = update.chat.id
     user_id = update.from_user.id if update.from_user else None
