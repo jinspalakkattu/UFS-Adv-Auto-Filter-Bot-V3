@@ -37,7 +37,7 @@ async def start(bot, update):
                         [
                             InlineKeyboardButton
                                 (
-                                    '🎭 ⭕️ FOR YOUR QUERY, CONTACT ME ⭕️', url="https://t.me/UFSChatBot"
+                                    '🎭 ⭕️ FOR YOUR QUERY, CONTACT ME ⭕️', url="@Unavailable4allTime"
                                 )
                         ]
                     ]
@@ -49,10 +49,10 @@ async def start(bot, update):
         return
 
     buttons = [[
-        InlineKeyboardButton('Developers', url='https://t.me/joinchat/TRlZZilyh-MVa66t'),
-        InlineKeyboardButton('Source Code 🧾', url ='https://t.me/joinchat/YS-WlsUC9nFiOWM0')
+        InlineKeyboardButton('Developers', url='https://t.me/newgen_cinemazzz'),
+        InlineKeyboardButton('Source Code 🧾', url ='https://t.me/newgen_cinemazzz')
     ],[
-        InlineKeyboardButton('Support 🛠', url='https://t.me/joinchat/YS-WlsUC9nFiOWM0')
+        InlineKeyboardButton('Support 🛠', url='https://t.me/newgen_cinemazzz')
     ],[
         InlineKeyboardButton('Help ⚙', callback_data="help")
     ]]
@@ -63,8 +63,8 @@ async def start(bot, update):
         await bot.send_message(
             chat_id=update.chat.id,
             text="""<b>Hey {}!!</b>
-            ഈ ബോട്ട് <b><u><a href="https://t.me/joinchat/TRlZZilyh-MVa66t">Universal Film Studio Group</a></u></b> ലേക്ക് ഉള്ളത് എന്ന് ഇനി വീണ്ടും വീണ്ടും പറയണോ??
-            അപ്പോ പിന്നെ എന്തിനാ വീണ്ടും വീണ്ടും സ്റ്റാർട്ട് കുത്തി കളിക്കാൻ വരുന്നേ... ആ സൈഡിലോട്ട് എങ്ങാനും മാറി ഇരിക്ക്‌ ഇനി🤭🤭""".format(update.from_user.first_name),
+            ഈ ബോട്ട് <b><u><a href="https://t.me/newgen_cinemazzz">NEWGEN CINEMAZZZ</a></u></b> ലേക്ക് ഉള്ളത് ആണ് നിങ്ങൾ വേറെ ബോട്ട് ഉണ്ടാകു...
+            അപ്പോ വീണ്ടും വീണ്ടും നെക്കി കളിക്കണ്ട സ്ഥലം വിട്ടോ😁... വേണേൽ മുതലാളിയെ contact ചെയ്യ്(@Unavailable4allTime)...🤭🤭""".format(update.from_user.first_name),
             parse_mode="html",
             reply_to_message_id=update.message_id
         )
@@ -95,7 +95,7 @@ async def help(bot, update):
         await bot.send_message(
             chat_id=update.chat.id,
             text="""<b>Hey {}!!</b>
-            നീ ഏതാ..... ഒന്ന് പോടെയ് അവൻ help ചോയ്ച്ച് വന്നിരിക്കുന്നു😤...I'm Different Bot U Know""".format(update.from_user.first_name),
+            നീ ഏതാ..... ഒന്ന് പോടെയ് അവൻ help ചോയ്ച്ച് വന്നിരിക്കുന്നു😤...ഞാൻ ഇടഞ്ഞാൽ കൊല കൊമ്പനാ😁 എന്തെലും ഉണ്ടേൽ മുതലാളിയെ contact ചെയ്യ്(@Unavailable4allTime)""".format(update.from_user.first_name),
             parse_mode="html",
             reply_to_message_id=update.message_id
         )
