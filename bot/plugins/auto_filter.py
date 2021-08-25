@@ -136,19 +136,20 @@ async def auto_filter(bot, update):
         #https://telegra.ph/file/f3ea3421859204e383b03.jpg
     else:
         Send_message=await bot.send_video(
-                chat_id = update.chat.id,
+                chat_id=update.chat.id,
                 video="https://telegra.ph/file/3e9f7db0c98e6b236c2c7.mp4",
-                caption=f"Couldn't Find This Movie.Please Try Again Or Search On Our <b><a href='https://t.me/UFStudio2'>Channel</a></b>. \n\nഈ സിനിമയുടെ ഒറിജിനൽ പേര് ഗൂഗിളിൽ പോയി കണ്ടെത്തി അതുപോലെ ഇവിടെ കൊടുക്കുക 🥺",
+                caption=f"Couldn't Find This Movie.Please Try Again Or Search On Our "
+                        f"<b><a href='https://t.me/UFStudio2'>Channel</a></b>. \n\n"
+                        f"ഈ സിനിമയുടെ ഒറിജിനൽ പേര് ഗൂഗിളിൽ പോയി കണ്ടെത്തി അതുപോലെ ഇവിടെ കൊടുക്കുക 🥺",
                 parse_mode="html",
                 reply_to_message_id=update.message_id
             )
         await asyncio.sleep(15) # in seconds
         await Send_message.delete()
-        #await bot.delete_messages(update.chat.id,update.message_id)
-        return # return if no files found for that query
+        # await bot.delete_messages(update.chat.id,update.message_id)
+        return  # return if no files found for that query
     
-
-    if len(results) == 0: # double check
+    if len(results) == 0:   # double check
         return
     
     else:
@@ -213,13 +214,14 @@ async def auto_filter(bot, update):
             for x in ibuttons:
                 result[0].insert(0, x) #Insert invite link buttons at first of page
                 
-            ibuttons = None # Free Up Memory...
+            ibuttons = None     # Free Up Memory...
             achatId = None
         
         ibuttonss = []
         ibuttonss.append(
                         [
-                            InlineKeyboardButton("⭕️ CONTACT ME ⭕️", url="https://t.me/UFSChatBot")
+                            InlineKeyboardButton("⭕️CONTACT ME ⭕️", url="https://t.me/UFSChatBot"),
+                            InlineKeyboardButton("⚜ New Movies ⚜", url="https://t.me/joinchat/IbXUj4vTNLphYWNk")
                         ]
                     )
         for x in ibuttonss:
@@ -229,16 +231,20 @@ async def auto_filter(bot, update):
 
         try:
             await bot.send_photo(
-                chat_id = update.chat.id,
-                photo="https://telegra.ph/file/b62f9703cf805da50d5c4.jpg",    # "https://telegra.ph/file/cf89bd804a288822cefc9.jpg",
-                caption=f"We Found <code><b><i>{(len_results)}</i></b></code> Results For Your Query: <code><b><i>{query}</i></b></code>, Requested By <b><code>{update.from_user.first_name}</code></b>",
+                chat_id=update.chat.id,
+                photo="https://telegra.ph/file/b62f9703cf805da50d5c4.jpg",
+                caption=f"No Of Files : <code><b><i>{len_results}</i></b></code>\n"
+                        f"Your Query : <code><b><i>{query}</i></b></code>\n"
+                        f"Requested By : <b><code>{update.from_user.first_name}</code></b>",
                 reply_markup=reply_markup,
                 parse_mode="html",
                 reply_to_message_id=update.message_id
             )
             # await bot.send_message(
             #     chat_id = update.chat.id,
-            #     text=f"We Found <code><b><i>{(len_results)}</i></b></code> Results For Your Query: <code><b><i>{query}</i></b></code>, Requested By <b><code>{update.from_user.first_name}</code></b>",
+            #     text=f"We Found <code><b><i>{len_results}</i></b></code> "
+            #          f"Results For Your Query: <code><b><i>{query}</i></b></code>, "
+            #          f"Requested By <b><code>{update.from_user.first_name}</code></b>",
             #     reply_markup=reply_markup,
             #     parse_mode="html",
             #     reply_to_message_id=update.message_id
