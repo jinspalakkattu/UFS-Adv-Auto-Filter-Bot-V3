@@ -159,7 +159,7 @@ async def auto_filter(bot, update):
         result += [results[i * max_per_page :(i + 1) * max_per_page ] for i in range((len(results) + max_per_page - 1) // max_per_page )]
         len_result = len(result)
         len_results = len(results)
-        results = None # Free Up Memory
+        results = None   # Free Up Memory
         
         FIND[query] = {"results": result, "total_len": len_results, "max_pages": max_pages} # TrojanzHex's Idea Of Dicts😅
 
@@ -220,7 +220,7 @@ async def auto_filter(bot, update):
         ibuttonss = []
         ibuttonss.append(
                         [
-                            InlineKeyboardButton("⭕️CONTACT ME ⭕️", url="https://t.me/UFSChatBot"),
+                            InlineKeyboardButton("⭕️ CONTACT ME ⭕️", url="https://t.me/UFSChatBot"),
                             InlineKeyboardButton("⚜ New Movies ⚜", url="https://t.me/joinchat/IbXUj4vTNLphYWNk")
                         ]
                     )
