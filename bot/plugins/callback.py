@@ -139,10 +139,23 @@ async def cb_navg(bot, update: CallbackQuery):
             temp_results.insert(0, x)
         ibuttons = None
         achatId = None
-    
+
+    ibuttonss = []
+    ibuttonss.append(
+        [
+            InlineKeyboardButton("⭕️ CONTACT ME ⭕️", url="https://t.me/UFSChatBot"),
+            InlineKeyboardButton("⚜ New Movies ⚜", url="https://t.me/joinchat/IbXUj4vTNLphYWNk")
+        ]
+    )
+    for x in ibuttonss:
+        temp_results[0].insert(0, x)  # Insert invite link buttons at first of page
     reply_markup = InlineKeyboardMarkup(temp_results)
-    
-    text=f"<i>We Found</i> <code><b><i>{leng}</i></b></code> <i>Results For Your Query:</i> <code><b><i>{query}</i></b></code>"
+
+    text = f"<b>No Of Files :</b> <code><b><i>{leng}</i></b></code>\n"\
+           f"<b>Your Query :</b> <code><b><i>{query}</i></b></code>\n"\
+           f"<b>Requested By :</b> <b><code>{update.from_user.first_name}</code></b>"
+
+    # text=f"<i>We Found</i> <code><b><i>{leng}</i></b></code> <i>Results For Your Query:</i> <code><b><i>{query}</i></b></code>"
         
     try:
         await update.message.edit(
