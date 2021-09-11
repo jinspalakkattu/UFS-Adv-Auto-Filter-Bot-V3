@@ -140,15 +140,6 @@ async def cb_navg(bot, update: CallbackQuery):
         ibuttons = None
         achatId = None
 
-    ibuttonss = []
-    ibuttonss.append(
-        [
-            InlineKeyboardButton("⭕️ CONTACT ME ⭕️", url="https://t.me/UFSChatBot"),
-            InlineKeyboardButton("⚜ New Movies ⚜", url="https://t.me/joinchat/IbXUj4vTNLphYWNk")
-        ]
-    )
-    for x in ibuttonss:
-        temp_results[0].insert(0, x)  # Insert invite link buttons at first of page
     reply_markup = InlineKeyboardMarkup(temp_results)
 
     text = f"<b>No Of Files :</b> <code><b><i>{leng}</i></b></code>\n"\
